@@ -1,7 +1,7 @@
 package gildedRose;
 
 public class ItemFactory {
-    public static ItemType getItemType(Item item) {
+    static ItemType getItemType(Item item) {
         switch (item.getName()) {
             case "Aged Brie":
                 return new AgedBrieItem();

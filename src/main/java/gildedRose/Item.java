@@ -2,7 +2,7 @@ package gildedRose;
 
 public class Item {
 
-    public String name;
+    private String name;
 
     public int sellIn;
 
@@ -12,7 +12,7 @@ public class Item {
         return name;
     }
 
-    public Item(String name, int sellIn, int quality) {
+    Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;

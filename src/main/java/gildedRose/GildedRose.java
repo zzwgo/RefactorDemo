@@ -7,9 +7,9 @@ import java.util.Arrays;
 import static gildedRose.ItemFactory.*;
 
 public class GildedRose {
-    Item[] items;
+    private Item[] items;
 
-    public GildedRose(Item[] items) {
+    GildedRose(Item[] items) {
         this.items = items;
     }
 
