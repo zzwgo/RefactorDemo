@@ -13,7 +13,11 @@ public class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
-
+    protected void handleQualityLessThanFifty(Item item) {
+        if (item.quality < 50) {
+            item.quality = item.quality + 1;
+        }
+    }
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
