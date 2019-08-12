@@ -108,5 +108,18 @@ public class CustomerTest {
                 "On this rental you earned <EM>0</EM> frequent renter points<P>",result);
     }
 
+    @Test
+    public void should_return_rentalRecordHtml_when_given_a_regular_movie_and_rental(){
+        Customer customer = new Customer("penny");
+        Movie movie = new Movie("titanic", Movie.REGULAR);
+        Rental rental = new Rental(movie, 2);
+        customer.addRental(rental);
 
+        String result=customer.statementHtml();
+
+        assertEquals("<H1>Rental Record for <EM>penny</EM></H1>\n" +
+                "\ttitanic\t2.0\n" +
+                "<P>You owe<EM>2.0</EM><P>\n" +
+                "On this rental you earned <EM>1</EM> frequent renter points<P>",result);
+    }
 }
