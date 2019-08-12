@@ -155,6 +155,14 @@ public class GildedRoseTest {
         assertEquals("Conjured Mana Cake, 4, 9", item.toString());
     }
 
+    @Test
+    public void should_return_Conjured_negative1_8_given_sellIn_is_0_and_quality_is_10() throws Exception {
+        Item item = new Item("Conjured Mana Cake", 0, 10);
+        GildedRose gildedRose=new GildedRose(new Item[]{(item)});
 
+        gildedRose.updateQuality();
+
+        assertEquals("Conjured Mana Cake, -1, 8", item.toString());
+    }
 
 }
