@@ -25,4 +25,15 @@ public class GildedRoseTest {
         assertEquals("something, 0, 0", item.toString());
     }
 
+    @Test
+    public void should_return_something_0_0_given_sellIn_is_0_and_quality_is_0() {
+        Item item = new Item("something", 0, 0);
+        GildedRose gildedRose=new GildedRose(new Item[]{(item)});
+
+        gildedRose.updateQuality();
+
+        assertEquals("something, -1, 0", item.toString());
+    }
+
+
 }
