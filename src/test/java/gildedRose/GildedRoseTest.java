@@ -145,4 +145,16 @@ public class GildedRoseTest {
         assertEquals("Sulfuras, Hand of Ragnaros, 5, 80", item.toString());
     }
 
+    @Test
+    public void should_return_Conjured_4_9_given_sellIn_is_5_and_quality_is_10() {
+        Item item = new Item("Conjured Mana Cake", 5, 10);
+        GildedRose gildedRose=new GildedRose(new Item[]{(item)});
+
+        gildedRose.updateQuality();
+
+        assertEquals("Conjured Mana Cake, 4, 9", item.toString());
+    }
+
+
+
 }
