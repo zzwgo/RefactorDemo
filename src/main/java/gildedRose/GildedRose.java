@@ -1,5 +1,9 @@
 package gildedRose;
 
+import com.sun.deploy.panel.ITreeNode;
+
+import java.util.Arrays;
+
 public class GildedRose {
     Item[] items;
 
@@ -8,15 +12,19 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        ItemType itemType;
-        for(Item item:items){
-            switch (item.getName()){
-                case "Aged Brie": itemType=new AgedBrieItem();break;
-                case "Sulfuras, Hand of Ragnaros":itemType=new SulfurasItem();break;
-                case "Backstage passes to a TAFKAL80ETC concert":itemType=new BackstageItem();break;
-                default:itemType=new NormalItem();
-            }
-            itemType.update(item);
+        Arrays.stream(items).forEach(item -> getItemType(item).update(item));
+    }
+
+    private ItemType getItemType(Item item) {
+        switch (item.getName()) {
+            case "Aged Brie":
+                return new AgedBrieItem();
+            case "Sulfuras, Hand of Ragnaros":
+                return new SulfurasItem();
+            case "Backstage passes to a TAFKAL80ETC concert":
+                return new BackstageItem();
+            default:
+                return new NormalItem();
         }
     }
 }
