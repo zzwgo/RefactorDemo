@@ -20,7 +20,7 @@ public class CustomerTest {
     @Test
     public void should_return_result_given_a_regular_movie_and_rental() {
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("titanic", Movie.REGULAR);
+        Movie movie = new RegularMovie("titanic");
         Rental rental = new Rental(movie, 2);
         customer.addRental(rental);
 
@@ -36,7 +36,7 @@ public class CustomerTest {
     public void should_return_result_given_a_regular_movie_and_3_dayRented(){
 
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("titanic", Movie.REGULAR);
+        Movie movie = new RegularMovie("titanic");
         Rental rental = new Rental(movie, 2);
         customer.addRental(rental);
 
@@ -52,7 +52,7 @@ public class CustomerTest {
     public void should_return_result_given_a_new_release_movie_and_3_dayRented(){
 
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("GG", Movie.NEW_RELEASE);
+        Movie movie = new NewReleaseMovie("GG");
         Rental rental = new Rental(movie, 3);
         customer.addRental(rental);
 
@@ -68,7 +68,7 @@ public class CustomerTest {
     public void should_return_result_given_a_childrens_movie_and_3_dayRented(){
 
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("GG", Movie.CHILDRENS);
+        Movie movie = new ChildrensMovie("GG");
         Rental rental = new Rental(movie, 3);
         customer.addRental(rental);
 
@@ -84,7 +84,7 @@ public class CustomerTest {
     public void should_return_result_given_a_childrens_movie_and_4_dayRented(){
 
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("GG", Movie.CHILDRENS);
+        Movie movie = new ChildrensMovie("GG");
         Rental rental = new Rental(movie, 4);
         customer.addRental(rental);
 
@@ -111,7 +111,7 @@ public class CustomerTest {
     @Test
     public void should_return_rentalRecordHtml_when_given_a_regular_movie_and_rental(){
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("titanic", Movie.REGULAR);
+        Movie movie = new RegularMovie("titanic");
         Rental rental = new Rental(movie, 2);
         customer.addRental(rental);
 
@@ -124,9 +124,9 @@ public class CustomerTest {
     }
 
     @Test
-    public void should_return_rentalRecordHtml_when_given_a_new_release_movie_and_3_dayRented(){
+    public void should_return_rentalRecordHtml_when_given_a_regular_movie_and_3_dayRented(){
         Customer customer = new Customer("penny");
-        Movie movie = new Movie("titanic", Movie.REGULAR);
+        Movie movie = new RegularMovie("titanic");
         Rental rental = new Rental(movie, 2);
         customer.addRental(rental);
 

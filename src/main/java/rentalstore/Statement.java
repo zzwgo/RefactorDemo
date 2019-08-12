@@ -12,10 +12,10 @@ public abstract class Statement {
         result += header(customer);
 
         for (Rental each : customer.getRentals()) {
-            double thisAmount = 0;
-            thisAmount = each.calAmount(thisAmount);
+            double thisAmount;
+            thisAmount = each.calAmount();
             frequentRenterPoints++;
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDayRented() > 1) {
+            if (each.getMovie() instanceof NewReleaseMovie && each.getDayRented() > 1) {
                 frequentRenterPoints++;
             }
             result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
