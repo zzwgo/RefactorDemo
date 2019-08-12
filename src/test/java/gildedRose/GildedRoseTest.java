@@ -64,4 +64,14 @@ public class GildedRoseTest {
 
         assertEquals("Aged Brie, 0, 50", item.toString());
     }
+
+    @Test
+    public void should_return_AgedBrie_negative1_12_given_sellIn_is_0_and_quality_is_10() {
+        Item item = new Item("Aged Brie", 0, 10);
+        GildedRose gildedRose=new GildedRose(new Item[]{(item)});
+
+        gildedRose.updateQuality();
+
+        assertEquals("Aged Brie, -1, 12", item.toString());
+    }
 }
