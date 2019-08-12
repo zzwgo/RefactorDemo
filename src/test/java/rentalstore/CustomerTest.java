@@ -12,7 +12,7 @@ public class CustomerTest {
 
         String result=customer.statement();
 
-        assertEquals("Rental Record for "+customer.getName()+"\n" +
+        assertEquals("Rental Record for aaron\n" +
                 "Amount owed is 0.0\n" +
                 "You earned 0 frequent renter points",result);
     }
@@ -85,16 +85,28 @@ public class CustomerTest {
 
         Customer customer = new Customer("penny");
         Movie movie = new Movie("GG", Movie.CHILDRENS);
-        Rental rental = new Rental(movie, 3);
+        Rental rental = new Rental(movie, 4);
         customer.addRental(rental);
 
         String result=customer.statement();
 
 
         assertEquals("Rental Record for penny\n" +
-                "\tGG\t1.5\n" +
-                "Amount owed is 1.5\n" +
+                "\tGG\t3.0\n" +
+                "Amount owed is 3.0\n" +
                 "You earned 1 frequent renter points",result);
     }
+
+    @Test
+    public void should_return_rentalRecordHtml_when_given_no_movie_and_dayRentd(){
+        Customer customer=new Customer("aaron");
+
+        String result=customer.statementHtml();
+
+        assertEquals("<H1>Rental Record for <EM>aaron</EM></H1>\n" +
+                "<P>You owe<EM>0.0</EM><P>\n" +
+                "On this rental you earned <EM>0</EM> frequent renter points<P>",result);
+    }
+
 
 }
