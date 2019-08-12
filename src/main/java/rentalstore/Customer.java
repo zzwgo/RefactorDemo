@@ -29,10 +29,10 @@ public class Customer {
             double thisAmount = 0;
 
             thisAmount = calAmount(each, thisAmount);
+
             frequentRenterPoints = calFrequentRenterPoints(frequentRenterPoints, each);
 
-            //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
+            result = showFiguresForRental(result, each, thisAmount);
 
             totalAmount += thisAmount;
         }
@@ -42,6 +42,11 @@ public class Customer {
 
         result += "You earned " + frequentRenterPoints + " frequent renter points";
 
+        return result;
+    }
+
+    private String showFiguresForRental(String result, Rental each, double thisAmount) {
+        result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
         return result;
     }
 
@@ -90,7 +95,7 @@ public class Customer {
             frequentRenterPoints = calFrequentRenterPoints(frequentRenterPoints, each);
 
             //show figures for this rental
-            result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
+            result = showFiguresForRental(result, each, thisAmount);
             totalAmount += thisAmount;
         }
 
