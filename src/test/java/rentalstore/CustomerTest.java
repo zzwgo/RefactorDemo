@@ -137,4 +137,6 @@ public class CustomerTest {
                 "<P>You owe<EM>2.0</EM><P>\n" +
                 "On this rental you earned <EM>1</EM> frequent renter points<P>",result);
     }
+
+
 }
