@@ -17,9 +17,18 @@ public class Item {
         this.sellIn = sellIn;
         this.quality = quality;
     }
-    protected void handleQualityLessThanFifty(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
+    protected void handleQualityLessThanFifty() {
+        if (this.quality < 50) {
+            this.quality = this.quality + 1;
+        }
+    }
+    protected void subSellIn() {
+        this.sellIn = this.sellIn - 1;
+    }
+
+    protected void handleQualityMoreThanZero() {
+        if (this.quality > 0) {
+            this.quality = this.quality - 1;
         }
     }
    @Override
