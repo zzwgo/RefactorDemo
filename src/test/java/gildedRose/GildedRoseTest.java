@@ -147,22 +147,22 @@ public class GildedRoseTest {
 
     @Test
     public void should_return_Conjured_4_9_given_sellIn_is_5_and_quality_is_10() {
-        Item item = new Item("Conjured Mana Cake", 5, 10);
+        Item item = new Item("Conjured", 5, 10);
         GildedRose gildedRose=new GildedRose(new Item[]{(item)});
 
         gildedRose.updateQuality();
 
-        assertEquals("Conjured Mana Cake, 4, 9", item.toString());
+        assertEquals("Conjured, 4, 8", item.toString());
     }
 
     @Test
     public void should_return_Conjured_negative1_8_given_sellIn_is_0_and_quality_is_10() throws Exception {
-        Item item = new Item("Conjured Mana Cake", 0, 10);
+        Item item = new Item("Conjured", 0, 10);
         GildedRose gildedRose=new GildedRose(new Item[]{(item)});
 
         gildedRose.updateQuality();
 
-        assertEquals("Conjured Mana Cake, -1, 8", item.toString());
+        assertEquals("Conjured, -1, 6", item.toString());
     }
 
 }
