@@ -9,6 +9,8 @@ public class ItemFactory {
                 return new SulfurasItem();
             case "Backstage passes to a TAFKAL80ETC concert":
                 return new BackstageItem();
+            case "Conjured":
+                return new ConjuredItem();
             default:
                 return new NormalItem();
         }
